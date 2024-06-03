@@ -1,0 +1,23 @@
+account_id: 6c2cbf41-c7b5-48ab-9777-76d320b985d4  # UUID
+scopes:
+  - name: scope-1
+    type: namespace
+    clusters:
+      cl1: ["*"]
+      cl2: ["default", "kube-system"]
+  - name: scope-2
+    type: cluster
+    clusters:
+      cl3: ["*"]
+      cl4: ["*"]
+groups:
+  - name: dev-us-xyz
+    provider_group_id: ea50b713-93c0-45d3-a87d-de253c06db0a  # UUID
+    type: namespace
+    permissions: ["POD_LOGS", "METRICS_VIEW", "JOB_DELETE"]
+    scopes: ["scope-1"]
+  - name: dev-eu-ttt
+    provider_group_id: 233bd8f0-60a7-4cbc-b151-b109c3308b07  # UUID
+    type: cluster
+    permissions: ["CLUSTER_DELETE", "POPEYE_SCAN"]
+    scopes: ["scope-1", "scope-2"]

@@ -1,0 +1,4 @@
+requests
+pydantic==2.7.1
+supabase==2.4.5
+regex
